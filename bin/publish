@@ -1,0 +1,11 @@
+#!/bin/bash
+
+docker-compose run --rm web npm run webpack
+cd decryptonomicon.github.io
+git add .
+git commit -m "Publish Site"
+git push
+cd ../
+git add decryptonomicon.github.io
+git commit -m "updated site submodule"
+git push
