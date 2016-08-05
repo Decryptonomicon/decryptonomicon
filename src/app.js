@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 const container = document.getElementById('app-container');
 
 import Shift from './components/shift';
+import Vig from './components/vigenere';
 
 function navigate(reactApp) {
 
@@ -13,9 +14,14 @@ function navigate(reactApp) {
     (
       <div id="app-main">
         <div className="navbar navbar-default">
+
           <div className="navbar-header">
-            <a className="navbar-brand" to="home">Decryptonomicon</a>
+            <a className="navbar-brand" href="/">Decryptonomicon</a>
           </div>
+          <ul className="nav navbar-nav">
+              <li><a href="#!/shift">Shift</a></li>
+              <li><a href="#!/vig">Vigenere</a></li>
+          </ul>
         </div>
 
         <div className="container-fluid">
@@ -30,10 +36,20 @@ function navigate(reactApp) {
     container);
 }
 
-page.base(window.location.pathname);
+if(window.location.pathname !== '/') {
+  page.base(window.location.pathname);
+}
+
+page('/shift', () => {
+  navigate(<Shift />);
+});
+
+page('/vig', () => {
+  navigate(<Vig />);
+});
 
 page('/', () => {
-  navigate(<Shift />);
+  navigate(<div> hello </div>);
 });
 
 page.start({
