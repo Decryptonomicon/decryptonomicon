@@ -6,6 +6,7 @@ git add .
 git commit -m "Publish Site"
 git push
 cd ../
-git add decryptonomicon.github.io
-git commit -m "updated site submodule"
-git push
+
+# git add decryptonomicon.github.io
+# git commit -m "updated site submodule"
+# git push

@@ -37,13 +37,7 @@ run `docker-compose up`, then code.
 This will start up a simple static server (see `server.js`), and webpack.
 
 ## Updating the site
-
+this will push decryptonomicon.github.io
 ```
-docker-compose run --rm web npm run webpack
-cd decryptonomicon.github.io
-git commit -am "Update description"
-git push
-cd ../
-git commit -am "Updating site submodule"
-git push
+bin/publish
 ```
