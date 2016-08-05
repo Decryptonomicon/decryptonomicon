@@ -6,7 +6,7 @@ module.exports = {
     "./src/app"
   ],
   output: {
-    path: __dirname + '/public/assets/',
+    path: __dirname + '/decryptonomicon.github.io/assets/',
     filename: 'client-bundle.js',
   },
   resolve: {
