@@ -1,0 +1,3 @@
+[submodule "decryptonomicon.github.io"]
+	path = decryptonomicon.github.io
+	url = git@github.com:Decryptonomicon/decryptonomicon.github.io.git
