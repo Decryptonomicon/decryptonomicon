@@ -16,7 +16,7 @@ function navigate(reactApp) {
         <div className="navbar navbar-default">
 
           <div className="navbar-header">
-            <a className="navbar-brand" href="/">Decryptonomicon</a>
+            <a className="navbar-brand" href="#!/">Decryptonomicon</a>
           </div>
           <ul className="nav navbar-nav">
               <li><a href="#!/shift">Shift</a></li>
