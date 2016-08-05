@@ -36,9 +36,7 @@ function navigate(reactApp) {
     container);
 }
 
-if(window.location.pathname !== '/') {
-  page.base(window.location.pathname);
-}
+page.base('/#!');
 
 page('/shift', () => {
   navigate(<Shift />);
