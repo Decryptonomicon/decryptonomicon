@@ -7,6 +7,7 @@ const Shift = React.createClass({
   getInitialState() {
     return {
       mode: 'decrypt',
+      classicMode: false,
     }
   },
 
@@ -33,18 +34,32 @@ const Shift = React.createClass({
     }, () => {this.update()});
   },
 
+  onVigClassicChange(e) {
+    var input = e.target;
+    if (input.tagName !== 'INPUT') {
+      input = input.querySelectorAll('input')[0];
+    }
+
+    myShift.setClassicVigenere(input.checked);
+    this.setState({
+      classicMode: input.checked
+    }, () => {this.update()});
+  },
+
   update() {
+    console.log(this.state)
     this.clearText.value = myShift[this.state.mode](this.cipherText.value);
   },
 
   render() {
 
     var encryptChecked = this.state.mode === 'encrypt',
-        decryptChecked = this.state.mode === 'decrypt';
-
+        decryptChecked = this.state.mode === 'decrypt',
+        vigChecked = this.state.classicMode === true;
 
     return (
       <form>
+      <h1>Shifter</h1>
 
       <div className="btn-group pull-right" data-toggle="buttons">
         <label className={(encryptChecked && 'active') + ' btn btn-primary'}
@@ -61,6 +76,13 @@ const Shift = React.createClass({
             name="mode"
             autoComplete="off"
             value="decrypt"/> Decrypt
+        </label>
+      </div>
+
+      <div className="btn-group pull-right" data-toggle="buttons">
+        <label className={(vigChecked && 'active') + ' btn btn-default'}
+                onClick={this.onVigClassicChange}>
+          <input type="checkbox" autoComplete="off" /> Vigenère Classic
         </label>
       </div>
 
